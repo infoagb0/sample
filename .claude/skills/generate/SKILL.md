@@ -9,8 +9,9 @@ description: Generate images and videos via fal.ai model APIs. Use on /generate,
 
 | Task | Default model | Recipe |
 |---|---|---|
-| Image (default, drafts) | Nano Banana 2 (fal) | models/nano-banana-2.md |
-| Video (default) | Kling 3.0 Standard (fal) | models/kling-3.md |
+| Image (default, drafts) | Nano Banana 2 Lite | models/nano-banana-2-lite.md |
+| Image (quality, finals) | Nano Banana 2.1 | models/nano-banana-2.1.md |
+| Video (default) | Kling 3.0 Standard | models/kling-3.md |
 
 Read the recipe file before every generation. If a task needs a model with no
 recipe (e.g. readable text in images -> GPT Image 2), say so and offer to write

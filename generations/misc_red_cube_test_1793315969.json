@@ -1,0 +1,11 @@
+{
+  "model": "nano-banana-2",
+  "provider": "kie",
+  "prompt": "A simple red cube centered on a plain white background, studio lighting, test image",
+  "refs": [],
+  "params": { "aspect": "1:1", "size": "1K", "output_format": "png" },
+  "cost_estimate_usd": null,
+  "kie_credits_consumed": 8.0,
+  "kie_task_id": "ed10df102318d42fe9a8d2956686d479",
+  "created": "2026-10-29T23:19:29Z"
+}

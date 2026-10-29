@@ -42,5 +42,5 @@ Headers: `Authorization: Bearer $KIE_API_KEY`, `Content-Type: application/json`
 ## Response handling
 Same flow as kie-nano-banana-2.md: taskId -> poll
 `/api/v1/jobs/recordInfo?taskId=` every 10-15 s -> parse `resultJson` -> download
-`resultUrls[0]` at once. All of these are UNVERIFIED. Give up after ~10 min and
+`resultUrls[0]` at once. The polling format was confirmed on an image run (see kie-nano-banana-2.md); result files live on `tempfile.aiquickdraw.com`, which the session must allow. Video fields are still UNTESTED. Give up after ~10 min and
 report the taskId.

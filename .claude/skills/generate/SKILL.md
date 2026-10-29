@@ -21,7 +21,7 @@ the recipe first; do not improvise an endpoint.
 
 ## Provider
 - fal.ai is the default (recipes verified). Kie AI is the second provider.
-  Auth: fal `Authorization: Key $FAL_KEY`, Kie `Authorization: Bearer $KIE_API_KEY`
+  Auth: fal `Authorization: Key $FAL_KEY`, Kie `Authorization: Bearer <key>` (added by proxy if a network secret exists)
 - Use Kie when I ask for it, or when fal errors or lacks the model. Kie
   recipes are `models/kie-*.md`.
 - Compare cost only from real quotes (fal pricing page, kie.ai pricing page).
@@ -29,10 +29,15 @@ the recipe first; do not improvise an endpoint.
 - Never switch providers silently. Say which route ran and why.
 
 ## Keys
-- Read FAL_KEY and KIE_API_KEY from `.env` in the workspace root. Load it into the shell environment
+- Kie AI: the environment may add the key for me through a network secret
+  (a proxy signs requests to api.kie.ai). If so, send the request with NO
+  Authorization header and no `.env`. Only if the call returns 401, look for
+  KIE_API_KEY in `.env` or the environment.
+- fal.ai and anything else: read the key from `.env` in the workspace root
   (e.g. `set -a; . ./.env; set +a`) and reference it as a variable.
 - Never print, echo, log, or paste a key into a file, script, or reply.
-- If the key for the chosen provider is missing, stop and tell me.
+- A missing `.env` is not a blocker by itself. Stop only if a call fails
+  with 401 and no key can be found. Then tell me.
 
 ## Output
 - Save every file FLAT into: `generations/` (workspace root)

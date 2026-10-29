@@ -1,1 +1,8 @@
 .env
+
+# Generated media and reference images stay on your computer, not in git
+generations/*
+!generations/refs/
+generations/refs/*
+!generations/.gitkeep
+!generations/refs/.gitkeep
